@@ -211,11 +211,10 @@ static int convertTruntableToStr(const turntable_t *table, char *str)
 int openLock(char **deadends, int deadendsSize, char *target)
 {
     int step = 0;
-    turntable_t startTable;
-    turntable_t targetTable;
-    convertStrToTurntable("0000", &startTable);
-    convertStrToTurntable(target, &targetTable);
-
+    turntable_t startTrun;
+    turntable_t targetTurn;
+    convertStrToTurntable("0000", &startTrun);
+    convertStrToTurntable(target, &targetTurn);
     return step;
 }
 
