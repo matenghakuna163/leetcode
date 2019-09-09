@@ -281,6 +281,10 @@ static int caclStep(const char *targetStr,
     convertStrToTurntable("0000", &start);
     convertStrToTurntable(targetStr, &target);
     int targetNum = convertTurntableToNum(&target);
+    if (deadNums[0])
+    {
+        return -1;
+    }
 
     myCircularQueueEnQueue(queue, start);
 
@@ -346,9 +350,9 @@ int openLock(char **deadends, int deadendsSize, char *target)
 int main(int argc, char *argv[])
 {
     int step = 0;
-    char *deadends[5] = {"0201", "0101", "0102", "1212", "2002"};
-    char *target = "0202";
-    step = openLock(deadends, 5, target);
+    char *deadends[1] = {"0000"};
+    char *target = "8888";
+    step = openLock(deadends, 1, target);
     printf("step=%d\n", step);
     return 0;
 }
